@@ -22,6 +22,7 @@ namespace Home
         public App()
         {
             var currentDir = Directory.GetCurrentDirectory();
+            var appDir = System.AppDomain.CurrentDomain.BaseDirectory;
             InitializeComponent();
             UnhandledException += App_UnhandledException;
             Ioc.Default.ConfigureServices(ConfigureServices());
