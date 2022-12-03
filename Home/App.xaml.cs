@@ -10,6 +10,8 @@ using Home.Views;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 
+using System.IO;
+
 // To learn more about WinUI3, see: https://docs.microsoft.com/windows/apps/winui/winui3/.
 namespace Home
 {
@@ -19,6 +21,7 @@ namespace Home
 
         public App()
         {
+            var currentDir = Directory.GetCurrentDirectory();
             InitializeComponent();
             UnhandledException += App_UnhandledException;
             Ioc.Default.ConfigureServices(ConfigureServices());
