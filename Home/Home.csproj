@@ -30,5 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Home.Core\Home.Core.csproj" />
+    <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
 </Project>
