@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 
 using System.IO;
+using System.Reflection;
 
 // To learn more about WinUI3, see: https://docs.microsoft.com/windows/apps/winui/winui3/.
 namespace Home
@@ -23,6 +24,9 @@ namespace Home
         {
             var currentDir = Directory.GetCurrentDirectory();
             var appDir = System.AppDomain.CurrentDomain.BaseDirectory;
+            Assembly libraryAssembly = Assembly.LoadFile(appDir + "/Library.dll");
+            var types = libraryAssembly.GetTypes();
+
             InitializeComponent();
             UnhandledException += App_UnhandledException;
             Ioc.Default.ConfigureServices(ConfigureServices());
